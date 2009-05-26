@@ -22,5 +22,16 @@ $lang = array(
   'E-mail' => 'E-mail',
   'Password' => 'Парола',
   'Password again' => 'Паролата отново',
+  'Payments' => 'Плащания',
+  'Impressions' => 'Импресии',
+  'Date' => 'Дата',
+  'Sum' => 'Сума',
+  'Count' => 'Брой',
+  'No Impressions' => 'Все още няма импресии',
+  'No Payment' => 'Все оше не са извършени плащания',
+  'Available Sum' => 'Налична сума',
+  'BGN' => 'лв',
+  'at' => 'в',
+  'Created' => 'Създадена',
 );
 ?>

@@ -22,6 +22,12 @@ class Ad extends Controller{
     } else {
       $data['title']= lang('Ads');
 
+      $data['links'] = array(
+        'ad' => lang('Ads'),
+        'account' => lang('Account'),
+        'user/logout' => lang('Logout'),
+      );
+
       $data['ads'] = $this->Admodel->getAds();
 
       $this->load->view('ad_view', $data);
@@ -34,6 +40,12 @@ class Ad extends Controller{
     } else {
 
       $data['title']= lang('Add new ad');
+
+      $data['links'] = array(
+        'ad' => lang('Ads'),
+        'account' => lang('Account'),
+        'user/logout' => lang('Logout'),
+      );
 
       $this->load->helper('form');
       $this->load->library('form_validation');

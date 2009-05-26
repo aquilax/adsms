@@ -2,7 +2,6 @@
   $this->load->view('header_view');
 ?>
 <h2>Системата е в процес на разработка!</h2>
-<h2><?php echo $title?></h2>
 
 <div class="span-9 colborder">
   <h5>Описание</h5>

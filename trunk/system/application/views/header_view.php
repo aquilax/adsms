@@ -24,3 +24,4 @@
 <?php $this->load->view('sidebar_view'); ?>
     </div>
     <div class="span-20 last">
+      <h2><?php echo $title; ?></h2>

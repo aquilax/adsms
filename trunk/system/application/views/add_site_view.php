@@ -1,10 +1,8 @@
 <?php
   $this->load->view('header_view');
-?>
 
-<h1><?php echo $message?></h1>
-<?php echo validation_errors(); ?>
-<?
+  echo validation_errors();
+  
   echo form_open_multipart('site/add');
   echo form_label('Name', 'name');
   echo form_input('name', set_value('name'));

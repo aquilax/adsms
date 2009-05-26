@@ -1,10 +1,8 @@
 <?php
   $this->load->view('header_view');
-?>
 
-<h1><?php echo $title?></h1>
-<?php 
   echo validation_errors('<div class="error">', '</div>');
+
   echo form_open('user/register');
 
   pe(
