@@ -1,0 +1,26 @@
+<?php
+$lang = array(
+  'Home' => 'Начало',
+  'Login' => 'Вход',
+  'Logout' => 'Изход',
+  'Register' => 'Регистрация',
+  'My Profile' => 'Моят профил',
+  'Ads' => 'Реклами',
+  'Account' => 'Сметка',
+  'Title' => 'Заглавие',
+  'URL' => 'URL',
+  'Description' => 'Описание',
+  'Cost per view' => 'Цена на импресия',
+  'Status' => 'Статус',
+  'Add new ad' => 'Добавяне на нова реклама',
+  'Add' => 'Добавяне',
+  'Active' => 'Активна',
+  'Inactive' => 'Деактивирана',
+  'VIP' => 'VIP',
+  'New ad' => 'Нова реклама',
+  'register' => 'регистрира',
+  'E-mail' => 'E-mail',
+  'Password' => 'Парола',
+  'Password again' => 'Паролата отново',
+);
+?>
