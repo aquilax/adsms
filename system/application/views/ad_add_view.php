@@ -1,9 +1,8 @@
 <?php
   $this->load->view('header_view');
-?>
-<h2><?php echo $title?></h2>
-<?php echo validation_errors('<div class="error">', '</div>'); ?>
-<?
+
+  echo validation_errors('<div class="error">', '</div>');
+
   echo form_open_multipart('ad/add');
 
   pe(

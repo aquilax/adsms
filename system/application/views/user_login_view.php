@@ -1,8 +1,6 @@
 <?php
   $this->load->view('header_view');
 ?>
-
-<h2><?php echo $title?></h2>
 <?php echo validation_errors(); ?>
 <?
   echo form_open('user/login');

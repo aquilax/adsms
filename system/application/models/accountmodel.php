@@ -17,6 +17,7 @@ class Accountmodel extends Model{
     $uid = $this->Usermodel->getId();
     $sql = "SELECT
             sum(tsum) AS tsum,
+            count(id) AS cntr,
             DATE(created) AS tdate
             FROM ".$this->table."
             WHERE uid = ".$this->db->escape($uid)."
