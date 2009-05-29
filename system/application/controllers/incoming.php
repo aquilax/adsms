@@ -18,7 +18,7 @@ class Incoming extends Controller{
   }
 
   function sms(){
-    //Fortumo Processing Code
+    // Fortumo Processing Code
     // check that the request comes from Fortumo server
 
     if(!in_array($_SERVER['REMOTE_ADDR'],

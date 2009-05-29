@@ -33,5 +33,6 @@ $lang = array(
   'BGN' => 'лв',
   'at' => 'в',
   'Created' => 'Създадена',
+  'Successful registration' => 'Регистрацията е успешна',
 );
 ?>
