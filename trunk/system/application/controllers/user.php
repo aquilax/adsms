@@ -44,8 +44,17 @@ class User extends Controller{
       $this->load->view('user_register_view', $data);
 		} else {
       $this->Usermodel->register($_POST);
-			$this->load->view('register_success_view');
+			redirect('user/register_success');
 		}
+  }
+
+  function register_success(){
+    $data['title']= lang('Successful registration');
+    $data['links'] = array(
+      'user/login' => lang('Login'),
+      'user/register' => lang('Register'),
+    );
+    $this->load->view('register_success_view', $data);
   }
 
   function check_email_reg($str){
