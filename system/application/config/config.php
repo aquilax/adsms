@@ -11,7 +11,7 @@
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://adsms.localhost/";
+$config['base_url']	= "";
 
 /*
 |--------------------------------------------------------------------------
@@ -217,7 +217,7 @@ $config['cache_path'] = '';
 | enabled you MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = "k1l1m@ndj@r0";
+$config['encryption_key'] = "";
 
 /*
 |--------------------------------------------------------------------------
@@ -324,6 +324,11 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+//Use my_config to override some config values
+if (!file_exists(APPPATH.'/config/my_config.php')){
+  die('Please create my_config.php');
+}
+require APPPATH.'/config/my_config.php';
 
 /* End of file config.php */
 /* Location: ./system/application/config/config.php */
