@@ -28,6 +28,16 @@ class Home extends Controller{
 
     $this->load->view('home_view',$data);
   }
+
+  function test(){
+    $data['title'] = lang('Sample ads');
+    $data['links'] = array(
+      'user/login' => lang('Login'),
+      'user/register' => lang('Register'),
+    );
+
+    $this->load->view('test_ad', $data);
+  }
 }
 
 ?>
