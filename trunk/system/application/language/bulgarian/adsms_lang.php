@@ -34,5 +34,6 @@ $lang = array(
   'at' => 'в',
   'Created' => 'Създадена',
   'Successful registration' => 'Регистрацията е успешна',
+  'Sample ads' => 'Примерни реклами',
 );
 ?>

@@ -23,7 +23,6 @@
   услуги за SMS разплащания;</li>
   </ul>
 </div>
-
 <?php
   $this->load->view('footer_view');
 ?>
