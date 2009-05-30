@@ -35,5 +35,6 @@ $lang = array(
   'Created' => 'Създадена',
   'Successful registration' => 'Регистрацията е успешна',
   'Sample ads' => 'Примерни реклами',
+  'Access denied' => 'Отказан достъп',
 );
 ?>
