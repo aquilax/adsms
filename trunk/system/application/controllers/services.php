@@ -48,9 +48,13 @@ class Services extends Controller{
     
     $service_id = $_GET['service_id'];
 
-    if (isset($config['services']['fortumo'][$service_id])){
-      $secret = $config['services']['fortumo'][$service_id]['key'];
+    $services = $this->config->item('services');
+
+    if (isset($services['fortumo'][$service_id])){
+      $secret = $services['fortumo'][$service_id]['key'];
     }
+
+    echo $secret;
 
     if(!empty($secret) && !$this->check_signature($_GET, $secret)) {
       die("Error: Invalid signature");

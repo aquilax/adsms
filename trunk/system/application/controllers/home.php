@@ -12,13 +12,18 @@ class Home extends Controller{
 
     if (!$this->Usermodel->logged()){
       $data['links'] = array(
+        '' => lang('Home'),
+        'home/prices' => lang('Prices'),
         'user/login' => lang('Login'),
         'user/register' => lang('Register'),
       );
     } else {
       $data['links'] = array(
+        '' => lang('Home'),
+        'home/prices' => lang('Prices'),
         'user' => lang('My Profile'),
         'user/logout' => lang('Logout'),
+        
       );
     }
 
@@ -32,11 +37,26 @@ class Home extends Controller{
   function test(){
     $data['title'] = lang('Sample ads');
     $data['links'] = array(
+      '' => lang('Home'),
+      'home/prices' => lang('Prices'),
       'user/login' => lang('Login'),
       'user/register' => lang('Register'),
     );
 
     $this->load->view('test_ad', $data);
+  }
+
+  function prices(){
+    $data['title'] = lang('Ad Prices');
+    $data['links'] = array(
+      '' => lang('Home'),
+      'home/prices' => lang('Prices'),
+      'user/login' => lang('Login'),
+      'user/register' => lang('Register'),
+    );
+
+    $data['services'] = $this->config->item('services');
+    $this->load->view('home_prices_view', $data);
   }
 }
 
