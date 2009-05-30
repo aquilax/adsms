@@ -9,10 +9,16 @@
  *
  * @author aquilax
  */
-class Denied {
+class Denied extends Controller{
+
+  function Denied(){
+    parent::Controller();
+    $this->lang->load('adsms', 'bulgarian');
+  }
 
   function index(){
-    $this->load->view('denied_view');
+    $data['title'] = lang('Access denied');
+    $this->load->view('denied_view', $data);
   }
 }
 ?>

@@ -9,15 +9,33 @@
  *
  * @author aquilax
  */
-class Incoming extends Controller{
+class Services extends Controller{
 
-  function Incoming(){
+  function Services(){
     parent::Controller();
     parse_str($_SERVER['QUERY_STRING'],$_GET);
     $this->load->model('paymentmodel');
   }
 
-  function sms(){
+  function mobio(){
+    $item = $_POST["item"];
+    $fromnum = $_POST["fromnum"];
+    $extid = $_POST["extid"];
+    $servID = $_POST["servID"];
+
+    log_message('error', serialize($_REQUEST));
+
+    $mobio_remote_addr = "194.12.244.114";
+
+    if($_SERVER['REMOTE_ADDR'] == $mobio_remote_addr) {
+      $this->paymentmodel->insertMobio($_POST);
+      $sms_reply = "Uspeshna obrabotka.";
+      // your script action ends
+      file("http://mobio.bg/paynotify/pnsendsms.php?servID=$servID&tonum=$fromnum&extid=$extid&message=".urlencode($sms_reply));
+    }
+  }
+
+  function fortumo(){
     // Fortumo Processing Code
     // check that the request comes from Fortumo server
 
@@ -30,15 +48,15 @@ class Incoming extends Controller{
     
     $service_id = $_GET['service_id'];
 
-    if (isset($config['keys'][$service_id])){
-      $secret = $config['keys'][$service_id];
+    if (isset($config['services']['fortumo'][$service_id])){
+      $secret = $config['services']['fortumo'][$service_id]['key'];
     }
 
     if(!empty($secret) && !$this->check_signature($_GET, $secret)) {
       die("Error: Invalid signature");
     }
 
-    $this->paymentmodel->insert($_GET);
+    $this->paymentmodel->insertFortumo($_GET);
     $sender = $_GET['sender'];
     $message = $_GET['message'];
 
