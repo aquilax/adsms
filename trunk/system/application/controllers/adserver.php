@@ -9,10 +9,10 @@
  *
  * @author aquilax
  */
-class Adserver extends Controller{
+class Adserver extends ADSMS_Controller{
 
   function Adserver(){
-    parent::Controller();
+    parent::ADSMS_Controller();
     $this->load->model('adservermodel');
   }
 

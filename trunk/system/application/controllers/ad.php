@@ -9,11 +9,11 @@
  *
  * @author aquilax
  */
-class Ad extends Controller{
+class Ad extends ADSMS_Controller{
+  
   function Ad(){
-    parent::Controller();
+    parent::ADSMS_Controller();
     $this->load->model('Admodel');
-    $this->lang->load('adsms', 'bulgarian');
   }
 
   function index(){

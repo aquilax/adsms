@@ -9,6 +9,7 @@
 за текстова реклама на малки и средни по големина сайтове чрез <strong>SMS</strong> разплащане.</p>
   <p>Платформата е с отворен код и е базирана на технологии с отворен код:
 <a href="http://codeigniter.com">Codeigniter</a> и <a href="http://www.blueprintcss.org/">Blueprint CSS</a>.</p>
+<p>Кодът е достъпен на адрес: <a href="http://code.google.com/p/adsms/">http://code.google.com/p/adsms/</a></p>
   <h5>За кого е подходяща</h5>
     <p>Системата е подходяща за собственици на <strong>блогове</strong>, <strong>сайтове с малка и средна посещаемост</strong>
     и <strong>форуми</strong>, които желаят да управляват сами рекламата на своите сайтове.</p>

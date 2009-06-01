@@ -9,11 +9,10 @@
  *
  * @author aquilax
  */
-class User extends Controller{
+class User extends ADSMS_Controller{
 
   function User(){
-    parent::Controller();
-    $this->lang->load('adsms', 'bulgarian');
+    parent::ADSMS_Controller();
   }
 
   function index(){
