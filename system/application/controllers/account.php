@@ -4,13 +4,11 @@
  *
  * @author aquilax
  */
-class Account extends Controller{
+class Account extends ADSMS_Controller{
 
   function Account(){
-    parent::Controller();
+    parent::ADSMS_Controller();
     $this->load->model('Accountmodel');
-    $this->lang->load('adsms', 'bulgarian');
-    //$this->output->enable_profiler(TRUE);
   }
 
   function index(){

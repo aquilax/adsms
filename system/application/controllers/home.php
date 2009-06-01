@@ -1,10 +1,9 @@
 <?php
 
-class Home extends Controller{
+class Home extends ADSMS_Controller{
 
   function Home(){
-    parent::Controller();
-    $this->lang->load('adsms', 'bulgarian');
+    parent::ADSMS_Controller();
   }
 
   function index(){

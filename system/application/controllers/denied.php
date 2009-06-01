@@ -9,11 +9,10 @@
  *
  * @author aquilax
  */
-class Denied extends Controller{
+class Denied extends ADSMS_Controller{
 
   function Denied(){
-    parent::Controller();
-    $this->lang->load('adsms', 'bulgarian');
+    parent::ADSMS_Controller();
   }
 
   function index(){

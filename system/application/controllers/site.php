@@ -9,10 +9,10 @@
  *
  * @author aquilax
  */
-class Site extends Controller{
+class Site extends ADSMS_Controller{
 
   function Site(){
-    parent::Controller();
+    parent::ADSMS_Controller();
     $this->load->model('Sitemodel');
   }
 
