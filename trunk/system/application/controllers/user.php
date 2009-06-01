@@ -16,22 +16,18 @@ class User extends ADSMS_Controller{
   }
 
   function index(){
-    if (!$this->Usermodel->logged()){
+    if (!$this->logged){
       redirect("home");
     } else {
       $data['title'] = lang('My Profile');
-      $data['links'] = array(
-        'ad' => lang('Ads'),
-        'account' => lang('Account'),
-        'user/logout' => lang('Logout'),
-      );
+      $data['menu'] = $this->menu;
       $this->load->view('user_view', $data);
     }
   }
 
   function register(){
     $data['title']= lang('Register');
-
+    $data['menu'] = $this->menu;
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
@@ -49,10 +45,7 @@ class User extends ADSMS_Controller{
 
   function register_success(){
     $data['title']= lang('Successful registration');
-    $data['links'] = array(
-      'user/login' => lang('Login'),
-      'user/register' => lang('Register'),
-    );
+    $data['menu'] = $this->menu;
     $this->load->view('register_success_view', $data);
   }
 
@@ -67,8 +60,9 @@ class User extends ADSMS_Controller{
 
   function login(){
     $data['title']= lang('Login');
+    $data['menu'] = $this->menu;
 
-		$this->load->helper('form');
+    $this->load->helper('form');
 		$this->load->library('form_validation');
 
     $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
