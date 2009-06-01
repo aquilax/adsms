@@ -16,13 +16,7 @@ class Account extends ADSMS_Controller{
       redirect('denied');
     } else {
       $data['title'] = lang("Account");
-
-      $data['links'] = array(
-        'ad' => lang('Ads'),
-        'account' => lang('Account'),
-        'user/logout' => lang('Logout'),
-      );
-
+      $data['menu'] = $this->menu;
       $data['sum'] = $this->Accountmodel->getSum();
       $data['payments'] = $this->Accountmodel->getTransactionsByDays(14, 1);
       $data['transactions'] = $this->Accountmodel->getTransactionsByDays(14, -1);

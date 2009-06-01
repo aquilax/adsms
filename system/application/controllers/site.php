@@ -19,6 +19,7 @@ class Site extends ADSMS_Controller{
   function index(){
     $data['title']='Sites';
     $data['sites']= $this->Sitemodel->getSites();
+    $data['menu'] = $this->menu;
     $this->load->view('site_index_view', $data);
   }
 
@@ -29,7 +30,7 @@ class Site extends ADSMS_Controller{
     }
     //Createform
     $data['title']='Add site';
-
+    $data['menu'] = $this->menu;
     $data['statusa'] = array(0 => 'Active', '-1' => 'Inactive', '1' => 'VIP');
 
 		$this->load->helper('form');

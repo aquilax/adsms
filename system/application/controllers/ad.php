@@ -22,11 +22,7 @@ class Ad extends ADSMS_Controller{
     } else {
       $data['title']= lang('Ads');
 
-      $data['links'] = array(
-        'ad' => lang('Ads'),
-        'account' => lang('Account'),
-        'user/logout' => lang('Logout'),
-      );
+      $data['menu'] = $this->menu;
 
       $data['ads'] = $this->Admodel->getAds();
 
@@ -41,11 +37,7 @@ class Ad extends ADSMS_Controller{
 
       $data['title']= lang('Add new ad');
 
-      $data['links'] = array(
-        'ad' => lang('Ads'),
-        'account' => lang('Account'),
-        'user/logout' => lang('Logout'),
-      );
+      $data['menu'] = $this->menu;
 
       $this->load->helper('form');
       $this->load->library('form_validation');
