@@ -15,12 +15,11 @@ class Account extends ADSMS_Controller{
     if(!$this->Usermodel->logged()){
       redirect('denied');
     } else {
-      $data['title'] = lang("Account");
-      $data['menu'] = $this->menu;
-      $data['sum'] = $this->Accountmodel->getSum();
-      $data['payments'] = $this->Accountmodel->getTransactionsByDays(14, 1);
-      $data['transactions'] = $this->Accountmodel->getTransactionsByDays(14, -1);
-      $this->load->view('account_view', $data);
+      $this->data['title'] = lang("Account");
+      $this->data['sum'] = $this->Accountmodel->getSum();
+      $this->data['payments'] = $this->Accountmodel->getTransactionsByDays(14, 1);
+      $this->data['transactions'] = $this->Accountmodel->getTransactionsByDays(14, -1);
+      $this->load->view('account_view', $this->data);
     }
   }
 }
