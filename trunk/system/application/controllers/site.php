@@ -17,10 +17,9 @@ class Site extends ADSMS_Controller{
   }
 
   function index(){
-    $data['title']='Sites';
-    $data['sites']= $this->Sitemodel->getSites();
-    $data['menu'] = $this->menu;
-    $this->load->view('site_index_view', $data);
+    $this->data['title']='Sites';
+    $this->data['sites']= $this->Sitemodel->getSites();
+    $this->load->view('site_index_view', $this->data);
   }
 
   function add(){
@@ -29,10 +28,8 @@ class Site extends ADSMS_Controller{
       redirect('home');
     }
     //Createform
-    $data['title']='Add site';
-    $data['menu'] = $this->menu;
-    $data['statusa'] = array(0 => 'Active', '-1' => 'Inactive', '1' => 'VIP');
-
+    $this->data['title']='Add site';
+    $this->data['statusa'] = array(0 => 'Active', '-1' => 'Inactive', '1' => 'VIP');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
@@ -42,7 +39,7 @@ class Site extends ADSMS_Controller{
     $this->form_validation->set_rules('status', 'Status', 'integer');
 
 		if ($this->form_validation->run() == FALSE){
-      $this->load->view('add_site_view', $data);
+      $this->load->view('add_site_view', $this->data);
 		} else {
       $this->Sitemodel->add($_POST);
 			redirect('site');

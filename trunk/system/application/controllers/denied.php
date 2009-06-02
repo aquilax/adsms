@@ -16,8 +16,8 @@ class Denied extends ADSMS_Controller{
   }
 
   function index(){
-    $data['title'] = lang('Access denied');
-    $this->load->view('denied_view', $data);
+    $this->data['title'] = lang('Access denied');
+    $this->load->view('denied_view', $this->data);
   }
 }
 ?>

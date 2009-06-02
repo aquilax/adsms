@@ -23,8 +23,6 @@ class Services extends Controller{
     $extid = $_POST["extid"];
     $servID = $_POST["servID"];
 
-    log_message('error', serialize($_REQUEST));
-
     $mobio_remote_addr = "194.12.244.114";
 
     if($_SERVER['REMOTE_ADDR'] == $mobio_remote_addr) {

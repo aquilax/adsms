@@ -14,6 +14,7 @@ class ADSMS_Controller extends Controller{
     parent::Controller();
     $this->lang->load('adsms', 'bulgarian');
     $this->logged = $this->Usermodel->logged();
+    $this->data['title'] = "Title not Set";
     $this->fillMenu();
   }
 
