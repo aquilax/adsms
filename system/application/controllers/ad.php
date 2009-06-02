@@ -21,9 +21,7 @@ class Ad extends ADSMS_Controller{
       redirect('denied');
     } else {
       $this->data['title']= lang('Ads');
-
       $this->data['ads'] = $this->Admodel->getAds();
-
       $this->load->view('ad_view', $this->data);
     }
   }
