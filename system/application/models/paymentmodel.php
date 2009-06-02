@@ -105,6 +105,33 @@ test
     }
   }
 
+  function insertWisdom($get){
+
+    $price = $get['sms_price']*1.2;
+
+    $data = array(
+      'message' => $get['sms_text'],
+      'sender' => $get['number_from'],
+      'country' => '',
+      'price' => $price,
+      'currency' => 'BGN',
+      'service_id' => 'wisdom',
+      'message_id' => $get['sms_id'],
+      'keyword' => '',
+      'shortcode' => $get['sms_number'],
+      'status' => 'ok',
+      'test' => '0',
+    );
+    $this->db->insert($this->table, $data);
+    $pid = $this->db->insert_id();
+    $trans = array(
+      'message' => $get['sms_text'],
+      'price' => $price
+    );
+    $this->insert_transaction($pid, $trans);
+  }
+
+
   function insertMobio($post){
 
     /*

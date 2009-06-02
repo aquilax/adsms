@@ -7,7 +7,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
  */
 class ADSMS_Controller extends Controller{
   var $menu = array();
-
+  var $data = array();
   var $logged = false;
 
   function ADSMS_Controller(){
@@ -30,6 +30,7 @@ class ADSMS_Controller extends Controller{
       $this->menu[20][30] = array('url' => 'account', 'name' => lang('Account'));
       $this->menu[20][500] = array('url' => 'user/logout', 'name' => lang('Logout'));
     }
+    $this->data['menu'] = $this->menu;
   }
 }
 ?>
